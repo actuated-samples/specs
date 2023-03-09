@@ -6,6 +6,7 @@ curl -s http://ip-api.com/json|jq
 
 hostname
 
+
 whoami
 
 echo lsblk
