@@ -4,9 +4,9 @@ echo Where is this runner?
 
 curl -s http://ip-api.com/json|jq
 
-Hostname: $(hostname)
+echo Hostname: $(hostname)
 
-Whoami: $(whoami)
+echo Whoami: $(whoami)
 
 echo lsblk
 
