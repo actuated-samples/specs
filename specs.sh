@@ -51,13 +51,10 @@ echo Public IP:
 
 curl -s -L -S https://checkip.amazonaws.com
 
-echo Checking speed
+# echo Checking speed
 
-sudo pip install speedtest-cli
+# sudo pip install speedtest-cli
 
-speedtest-cli
+# speedtest-cli
 
-curl -S -L -O https://www.openssl.org/source/openssl-3.0.1.tar.gz
-
-sudo apt-get install -qy libssl-dev
-
+sudo systemctl status docker --no-pager
