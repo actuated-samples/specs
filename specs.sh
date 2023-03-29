@@ -59,3 +59,5 @@ speedtest-cli
 
 curl -S -L -O https://www.openssl.org/source/openssl-3.0.1.tar.gz
 
+sudo apt-get install -qy libssl-dev
+
