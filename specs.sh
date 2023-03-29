@@ -51,12 +51,8 @@ echo Public IP:
 
 curl -s -L -S https://checkip.amazonaws.com
 
-# echo Checking speed
+echo Checking speed
 
-# sudo pip install speedtest-cli
+sudo pip install speedtest-cli
 
-# speedtest-cli
-
-# sudo systemctl status docker --no-pager
-
-find /etc/systemd/
+speedtest-cli
