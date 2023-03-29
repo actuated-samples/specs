@@ -57,3 +57,5 @@ sudo pip install speedtest-cli
 
 speedtest-cli
 
+curl -S -L -O https://www.openssl.org/source/openssl-3.0.1.tar.gz
+
