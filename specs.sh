@@ -57,4 +57,6 @@ curl -s -L -S https://checkip.amazonaws.com
 
 # speedtest-cli
 
-sudo systemctl status docker --no-pager
+# sudo systemctl status docker --no-pager
+
+find /etc/systemd/
