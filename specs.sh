@@ -53,7 +53,6 @@ curl -s -L -S https://checkip.amazonaws.com
 
 echo Checking speed
 
-sudo pip install speedtest-cli
-
-speedtest-cli
+# sudo pip install speedtest-cli
+# speedtest-cli
 
