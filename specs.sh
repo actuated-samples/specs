@@ -1,5 +1,14 @@
 #!/bin/bash
 
+echo What was the start-time of the system image?
+
+sudo systemd-analyze
+
+sudo systemd-analyze blame
+
+sudo systemctl list-jobs
+
+
 echo Where is this runner?
 
 curl -s http://ip-api.com/json|jq
