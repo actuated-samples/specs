@@ -2,6 +2,8 @@
 
 echo What was the start-time of the system image?
 
+sudo systemd-analyze critical-chain
+
 sudo systemd-analyze
 
 sudo systemd-analyze blame
