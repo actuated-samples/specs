@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Machine ID: $(sudo cat /etc/machine-id)"
+
 echo What was the start-time of the system image?
 
 sudo systemd-analyze critical-chain
