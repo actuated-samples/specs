@@ -3,7 +3,13 @@
 echo "Machine ID: $(sudo cat /etc/machine-id)"
 echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
+sudo rm -rf /var/lib/dbus/machine-id
 sudo systemd-machine-id-setup
+
+echo "Machine ID: $(sudo cat /etc/machine-id)"
+echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
+
+sudo dbus-uuidgen --ensure=/etc/machine-id
 
 echo "Machine ID: $(sudo cat /etc/machine-id)"
 echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
