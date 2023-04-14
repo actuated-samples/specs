@@ -12,7 +12,6 @@ sudo systemd-analyze blame
 
 sudo systemctl list-jobs
 
-
 echo Where is this runner?
 
 curl -s http://ip-api.com/json|jq
