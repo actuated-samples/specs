@@ -3,6 +3,12 @@
 echo "Machine ID: $(sudo cat /etc/machine-id)"
 echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
+sudo systemd-machine-id-setup
+
+echo "Machine ID: $(sudo cat /etc/machine-id)"
+echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
+
+
 echo What was the start-time of the system image?
 
 sudo systemd-analyze critical-chain
