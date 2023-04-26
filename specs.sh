@@ -3,7 +3,6 @@
 du -h /
 lsblk
 
-
 echo "Machine ID: $(sudo cat /etc/machine-id)"
 echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
