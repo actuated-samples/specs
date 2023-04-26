@@ -1,6 +1,6 @@
 #!/bin/bash
 
-du -h /
+df -h /
 lsblk
 
 echo "Machine ID: $(sudo cat /etc/machine-id)"
