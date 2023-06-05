@@ -22,3 +22,4 @@ jobs:
           run: |
             ./check-docker.sh
             ./specs.sh
+
