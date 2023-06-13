@@ -1,5 +1,7 @@
 #!/bin/bash
 
+gdfjkjdfgkdfg
+
 df -h /
 lsblk
 
