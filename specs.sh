@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gdfjkjdfgkdfg
+exit 1
 
 df -h /
 lsblk
