@@ -17,6 +17,9 @@ jobs:
         runs-on: actuated-4cpu-8gb
         steps:
         - uses: actions/checkout@v1
+        - name: Show runner arch
+          run: |
+            echo Runner arch: ${{runner.arch}}
         - name: Setup mirror
           uses: self-actuated/hub-mirror@master
         - name: Check specs
