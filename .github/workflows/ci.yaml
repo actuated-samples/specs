@@ -23,5 +23,4 @@ jobs:
           uses: self-actuated/hub-mirror@master
         - name: Check specs
           run: |
-            ./check-docker.sh
             ./specs.sh
