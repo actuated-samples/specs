@@ -1,92 +1,93 @@
 #!/bin/bash
 
-echo Check for "which"
-/usr/bin/which lsblk
 /usr/bin/which python3
+echo "which python3" $?
+
 /usr/bin/which python
+echo "which python" $?
 
-df -h /
-lsblk
+# df -h /
+# lsblk
 
-echo "Machine ID: $(sudo cat /etc/machine-id)"
-echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
+# echo "Machine ID: $(sudo cat /etc/machine-id)"
+# echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
-sudo rm -rf /var/lib/dbus/machine-id
-sudo systemd-machine-id-setup
+# sudo rm -rf /var/lib/dbus/machine-id
+# sudo systemd-machine-id-setup
 
-echo "Machine ID: $(sudo cat /etc/machine-id)"
-echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
+# echo "Machine ID: $(sudo cat /etc/machine-id)"
+# echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
-sudo dbus-uuidgen --ensure=/etc/machine-id
+# sudo dbus-uuidgen --ensure=/etc/machine-id
 
-echo "Machine ID: $(sudo cat /etc/machine-id)"
-echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
+# echo "Machine ID: $(sudo cat /etc/machine-id)"
+# echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
-echo What was the start-time of the system image?
+# echo What was the start-time of the system image?
 
-sudo systemd-analyze critical-chain
+# sudo systemd-analyze critical-chain
 
-sudo systemd-analyze
+# sudo systemd-analyze
 
-sudo systemd-analyze blame
+# sudo systemd-analyze blame
 
-sudo systemctl list-jobs
+# sudo systemctl list-jobs
 
-echo Where is this runner?
+# echo Where is this runner?
 
-curl -s http://ip-api.com/json|jq
+# curl -s http://ip-api.com/json|jq
 
-echo Hostname: $(hostname)
+# echo Hostname: $(hostname)
 
-echo Whoami: $(whoami)
+# echo Whoami: $(whoami)
 
-echo lsblk
+# echo lsblk
 
-lsblk
+# lsblk
 
-echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
+# echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
-echo Installing hdparm
+# echo Installing hdparm
 
-sudo apt update -qqqy && sudo apt install -qqqy hdparm
+# sudo apt update -qqqy && sudo apt install -qqqy hdparm
 
-echo Read speed
+# echo Read speed
 
-sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
+# sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
 
-echo Write speed
+# echo Write speed
 
-sync; dd if=/dev/zero of=./tempfile bs=1M count=1024; sync
+# sync; dd if=/dev/zero of=./tempfile bs=1M count=1024; sync
 
-echo Information on main disk
+# echo Information on main disk
 
-df -h /
+# df -h /
 
-echo Memory info
-free -h
+# echo Memory info
+# free -h
 
-echo Total CPUs:
-echo CPUs: $(nproc)
+# echo Total CPUs:
+# echo CPUs: $(nproc)
 
-echo CPU Model
-cat /proc/cpuinfo |grep "model name"
+# echo CPU Model
+# cat /proc/cpuinfo |grep "model name"
 
-echo Kernel and OS info
-uname -a
+# echo Kernel and OS info
+# uname -a
 
-cat /etc/os-release
+# cat /etc/os-release
 
-echo PATH defined as:
-echo $PATH
+# echo PATH defined as:
+# echo $PATH
 
-echo Public IP:
+# echo Public IP:
 
-curl -s -L -S https://checkip.amazonaws.com
+# curl -s -L -S https://checkip.amazonaws.com
 
-#echo Checking speed
-# sudo pip install speedtest-cli
-# speedtest-cli
+# #echo Checking speed
+# # sudo pip install speedtest-cli
+# # speedtest-cli
 
-docker run alpine:3.17.1 cat /etc/os-release
+# docker run alpine:3.17.1 cat /etc/os-release
 
 
