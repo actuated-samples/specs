@@ -1,7 +1,9 @@
 #!/bin/bash
 
 echo Check for "which"
-which lsblk
+/usr/bin/which lsblk
+/usr/bin/which python3
+/usr/bin/which python
 
 df -h /
 lsblk
