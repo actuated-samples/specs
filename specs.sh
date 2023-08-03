@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo Check for "which"
+which lsblk
+
 df -h /
 lsblk
 
