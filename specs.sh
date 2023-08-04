@@ -6,6 +6,9 @@ echo "which python3" $?
 /usr/bin/which python
 echo "which python" $?
 
+echo OS:
+sudo cat /etc/os-release
+
 # df -h /
 # lsblk
 
