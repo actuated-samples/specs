@@ -93,6 +93,8 @@ sudo cat /etc/os-release
 
 # docker run alpine:3.17.1 cat /etc/os-release
 curl http://192.168.128.1:5000/v2/_catalog --connect-timeout 1
+echo "curl's exit code: $?"
+
 if [ "$(curl -f --connect-timeout 0.1 -s http://192.168.128.1:5000/v2/_catalog)" == "0" ]
 then
   echo "Mirror found, configure KinD for the mirror"
