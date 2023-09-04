@@ -93,9 +93,9 @@ sudo cat /etc/os-release
 
 # docker run alpine:3.17.1 cat /etc/os-release
 
-if [ "$(curl -f --connect-timeout 0.1 -s http://192.168.128.1:5000 &> /dev/null)" == "0" ] then
+if [ "$(curl -f --connect-timeout 0.1 -s http://192.168.128.1:5000 &> /dev/null)" == "0" ]
+then
   echo "Mirror found, configure KinD for the mirror"
 else
-  echo "Mirror not found, use defaults
+  echo "Mirror not found, use defaults"
 fi
-
