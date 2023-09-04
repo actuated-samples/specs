@@ -92,12 +92,10 @@ sudo cat /etc/os-release
 # # speedtest-cli
 
 # docker run alpine:3.17.1 cat /etc/os-release
-curl http://192.168.128.1:5000/v2/_catalog --connect-timeout 1
-echo "curl's exit code: $?"
 
-PROBE_MIRROR=$(curl -f --connect-timeout 0.1 -s http://192.168.128.1:5000/v2/_catalog)
+curl -f --connect-timeout 0.1 -s http://192.168.128.1:5000/v2/_catalog &> /dev/null
 
-if [ "$PROBE_MIRROR" == "0" ]
+if [ "$?" == "0" ]
 then
   echo "Mirror found, configure KinD for the mirror"
 else
