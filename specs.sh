@@ -101,3 +101,5 @@ then
 else
   echo "Mirror not found, use defaults"
 fi
+
+find /lib/modules/5.10.77/kernel -name *bpf*
