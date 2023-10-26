@@ -11,8 +11,17 @@ on:
     workflow_dispatch:
 
 jobs:
+
     specs:
-        name: specs
+        strategy:
+          matrix:
+             os:
+             - actuated-4cpu-4gb
+             - actuated-arm64-4cpu-4gb
+
+        name: specs-${{ matrix.os }}
+        runs-on: ${{ matrix.os }}
+    
         runs-on: actuated-arm64-2cpu-4gb
         steps:
         - uses: actions/checkout@v1
