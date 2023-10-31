@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo $DEBIAN_FRONTEND
+
 /usr/bin/which python3
 echo "which python3" $?
 
