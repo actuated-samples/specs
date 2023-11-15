@@ -6,7 +6,7 @@ echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
 echo Installing hdparm
 
-sudo apt update -qqqy && sudo apt install -qqqy hdparm
+sudo apt update -qqqqy && sudo apt install -qqqqy hdparm
 
 echo Read speed
 
