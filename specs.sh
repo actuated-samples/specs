@@ -1,54 +1,71 @@
 #!/bin/bash
 
-echo $DEBIAN_FRONTEND
+lsblk
 
-/usr/bin/which python3
-echo "which python3" $?
+echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
-/usr/bin/which python
-echo "which python" $?
+echo Installing hdparm
 
-echo OS:
-sudo cat /etc/os-release
+sudo apt update -qqqy && sudo apt install -qqqy hdparm
 
-# df -h /
-# lsblk
+echo Read speed
 
-# echo "Machine ID: $(sudo cat /etc/machine-id)"
-# echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
+sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
 
-# sudo rm -rf /var/lib/dbus/machine-id
-# sudo systemd-machine-id-setup
+echo Write speed
 
-# echo "Machine ID: $(sudo cat /etc/machine-id)"
-# echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
+sync; dd if=/dev/zero of=./tempfile bs=1M count=1024; sync
 
-# sudo dbus-uuidgen --ensure=/etc/machine-id
 
-# echo "Machine ID: $(sudo cat /etc/machine-id)"
-# echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
+# echo $DEBIAN_FRONTEND
 
-# echo What was the start-time of the system image?
+# # /usr/bin/which python3
+# # echo "which python3" $?
 
-# sudo systemd-analyze critical-chain
+# # /usr/bin/which python
+# # echo "which python" $?
 
-# sudo systemd-analyze
+# echo OS:
+# sudo cat /etc/os-release
 
-# sudo systemd-analyze blame
+# # df -h /
+# # lsblk
 
-# sudo systemctl list-jobs
+# # echo "Machine ID: $(sudo cat /etc/machine-id)"
+# # echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
-# echo Where is this runner?
+# # sudo rm -rf /var/lib/dbus/machine-id
+# # sudo systemd-machine-id-setup
 
-# curl -s http://ip-api.com/json|jq
+# # echo "Machine ID: $(sudo cat /etc/machine-id)"
+# # echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
-# echo Hostname: $(hostname)
+# # sudo dbus-uuidgen --ensure=/etc/machine-id
 
-# echo Whoami: $(whoami)
+# # echo "Machine ID: $(sudo cat /etc/machine-id)"
+# # echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
-# echo lsblk
+# # echo What was the start-time of the system image?
 
-# lsblk
+# # sudo systemd-analyze critical-chain
+
+# # sudo systemd-analyze
+
+# # sudo systemd-analyze blame
+
+# # sudo systemctl list-jobs
+
+# # echo Where is this runner?
+
+# # curl -s http://ip-api.com/json|jq
+
+# # echo Hostname: $(hostname)
+
+# # echo Whoami: $(whoami)
+
+# # echo lsblk
+
+# # lsblk
 
 # echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
@@ -64,44 +81,44 @@ sudo cat /etc/os-release
 
 # sync; dd if=/dev/zero of=./tempfile bs=1M count=1024; sync
 
-# echo Information on main disk
+# # echo Information on main disk
 
-# df -h /
+# # df -h /
 
-# echo Memory info
-# free -h
+# # echo Memory info
+# # free -h
 
-# echo Total CPUs:
-# echo CPUs: $(nproc)
+# # echo Total CPUs:
+# # echo CPUs: $(nproc)
 
-# echo CPU Model
-# cat /proc/cpuinfo |grep "model name"
+# # echo CPU Model
+# # cat /proc/cpuinfo |grep "model name"
 
-# echo Kernel and OS info
-# uname -a
+# # echo Kernel and OS info
+# # uname -a
 
-# cat /etc/os-release
+# # cat /etc/os-release
 
-# echo PATH defined as:
-# echo $PATH
+# # echo PATH defined as:
+# # echo $PATH
 
-# echo Public IP:
+# # echo Public IP:
 
-# curl -s -L -S https://checkip.amazonaws.com
+# # curl -s -L -S https://checkip.amazonaws.com
 
-# #echo Checking speed
-# # sudo pip install speedtest-cli
-# # speedtest-cli
+# # #echo Checking speed
+# # # sudo pip install speedtest-cli
+# # # speedtest-cli
 
-# docker run alpine:3.17.1 cat /etc/os-release
+# # docker run alpine:3.17.1 cat /etc/os-release
 
-curl -f --connect-timeout 0.1 -s http://192.168.128.1:5000/v2/_catalog &> /dev/null
+# # curl -f --connect-timeout 0.1 -s http://192.168.128.1:5000/v2/_catalog &> /dev/null
 
-if [ "$?" == "0" ]
-then
-  echo "Mirror found, configure KinD for the mirror"
-else
-  echo "Mirror not found, use defaults"
-fi
+# # if [ "$?" == "0" ]
+# # then
+# #   echo "Mirror found, configure KinD for the mirror"
+# # else
+# #   echo "Mirror not found, use defaults"
+# # fi
 
-find /lib/modules/5.10.77/kernel -name *bpf*
+# # find /lib/modules/5.10.77/kernel -name *bpf*
