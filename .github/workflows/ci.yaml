@@ -35,3 +35,4 @@ jobs:
         - name: Look for BFP
           run: |
             find /lib/modules/5.10.77/kernel -name *bpf*
+
