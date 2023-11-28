@@ -19,15 +19,13 @@ jobs:
              - actuated-4cpu-4gb
              - actuated-arm64-4cpu-4gb
 
-             # - ["actuated-arm64-4cpu-4gb","actuated-m1"]
-
         name: specs-${{ matrix.os }}
         runs-on: ${{ matrix.os }}
         steps:
         - run: |
             echo "TARGET_ARCH=$(uname -m)" >> $GITHUB_ENV
         - run: |
-            echo ${{TARGET_ARCH}}
+            echo ${{env.TARGET_ARCH}}
 
         - uses: actions/checkout@v1
         - name: Show runner arch
