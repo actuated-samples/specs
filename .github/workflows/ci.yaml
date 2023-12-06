@@ -53,5 +53,5 @@ jobs:
             ./specs.sh
         - name: Look for BFP
           run: |
-            find /lib/modules/5.10.201/kernel -name *bpf*
+            find /lib/modules/$(uname -r)/kernel -name *bpf*
 
