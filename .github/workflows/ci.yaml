@@ -18,6 +18,7 @@ jobs:
              os:
              - actuated-4cpu-4gb
              - actuated-arm64-4cpu-4gb
+             - ubuntu-latest
 
         name: specs-${{ matrix.os }}
         runs-on: ${{ matrix.os }}
