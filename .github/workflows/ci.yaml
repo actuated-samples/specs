@@ -22,6 +22,19 @@ jobs:
         name: specs-${{ matrix.os }}
         runs-on: ${{ matrix.os }}
         steps:
+# vmmeter start
+        - uses: alexellis/arkade-get@master
+          with:
+            crane: latest
+            print-summary: false
+        - name: Install vmmeter
+          run: |
+            ARCH=amd64
+            if [ "$(uname -m)" == "aarch64" ] ; then ARCH=arm64 ; fi
+            crane export --platform linux/$ARCH ttl.sh/alexellis2/vmmeter:latest | sudo tar -xvf - -C /usr/local/bin
+        - uses: self-actuated/vmmeter-action@master
+# vmmeter end
+
         - run: |
             echo "TARGET_ARCH=$(uname -m)" >> $GITHUB_ENV
         - run: |
