@@ -36,7 +36,6 @@ jobs:
         - uses: self-actuated/vmmeter-action@master
 # vmmeter end
 
-
         - run: |
             echo "TARGET_ARCH=$(uname -m)" >> $GITHUB_ENV
         - run: |
