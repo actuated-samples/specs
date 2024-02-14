@@ -13,15 +13,17 @@ on:
 jobs:
 
     specs:
-        strategy:
-          matrix:
-             os:
-             - actuated-4cpu-4gb
-             - actuated-arm64-4cpu-4gb
-             - ubuntu-latest
+        # strategy:
+          # matrix:
+             # os:
+             # - actuated-4cpu-4gb
+             # - actuated-arm64-4cpu-4gb
+             # - ubuntu-latest
 
-        name: specs-${{ matrix.os }}
-        runs-on: ${{ matrix.os }}
+        # name: specs-${{ matrix.os }}
+        # runs-on: ${{ matrix.os }}
+        name: specs
+        runs-on: [actuated-arm64-32cpu-64gb, aadp]
         steps:
 # vmmeter start
         - uses: alexellis/arkade-get@master
