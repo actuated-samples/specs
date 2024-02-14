@@ -11,7 +11,6 @@ on:
     workflow_dispatch:
 
 jobs:
-
     specs:
         # strategy:
           # matrix:
@@ -24,6 +23,7 @@ jobs:
         # runs-on: ${{ matrix.os }}
         name: specs
         runs-on: [actuated-arm64-32cpu-64gb, aadp]
+
         steps:
 # vmmeter start
         - uses: alexellis/arkade-get@master
@@ -38,21 +38,8 @@ jobs:
         - uses: self-actuated/vmmeter-action@master
 # vmmeter end
 
-        - run: |
-            echo "TARGET_ARCH=$(uname -m)" >> $GITHUB_ENV
-        - run: |
-            echo ${{env.TARGET_ARCH}}
-
         - uses: actions/checkout@v1
-        - name: Show runner arch
-          run: |
-            echo Runner arch: ${{runner.arch}}
-        - name: Setup mirror
-          uses: self-actuated/hub-mirror@master
+
         - name: Check specs
           run: |
             ./specs.sh
-        - name: Look for BFP
-          run: |
-            find /lib/modules/$(uname -r)/kernel -name *bpf*
-
