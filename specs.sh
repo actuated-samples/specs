@@ -110,15 +110,3 @@ sync; dd if=/dev/zero of=./tempfile bs=1M count=1024; sync
 # # # sudo pip install speedtest-cli
 # # # speedtest-cli
 
-# # docker run alpine:3.17.1 cat /etc/os-release
-
-# # curl -f --connect-timeout 0.1 -s http://192.168.128.1:5000/v2/_catalog &> /dev/null
-
-# # if [ "$?" == "0" ]
-# # then
-# #   echo "Mirror found, configure KinD for the mirror"
-# # else
-# #   echo "Mirror not found, use defaults"
-# # fi
-
-# # find /lib/modules/5.10.77/kernel -name *bpf*
