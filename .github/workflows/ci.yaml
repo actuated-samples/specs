@@ -24,6 +24,7 @@ jobs:
         name: specs
         runs-on: [actuated-arm64-8cpu-12gb, auto]
 
+
         steps:
 # vmmeter start
         - uses: alexellis/arkade-get@master
