@@ -29,7 +29,7 @@ jobs:
         - uses: alexellis/arkade-get@master
         - name: Install vmmeter
           run: |
-            sudo -E arkade system extract ghcr.io/openfaasltd/vmmeter:latest --path /usr/local/bin/
+            sudo -E arkade oci extract ghcr.io/openfaasltd/vmmeter:latest --path /usr/local/bin/
         - uses: self-actuated/vmmeter-action@master
 # vmmeter end
 
