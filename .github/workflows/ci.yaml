@@ -26,7 +26,7 @@ jobs:
 
         steps:
 # vmmeter start
-        - uses: alexellis/arkade-get@master
+        - uses: alexellis/setup-arkade@master
         - name: Install vmmeter
           run: |
             sudo -E arkade oci install ghcr.io/openfaasltd/vmmeter:latest --path /usr/local/bin/
