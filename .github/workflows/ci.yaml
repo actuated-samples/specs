@@ -24,18 +24,12 @@ jobs:
         name: specs
         runs-on: [actuated-arm64-8cpu-12gb]
 
-
         steps:
 # vmmeter start
         - uses: alexellis/arkade-get@master
-          with:
-            crane: latest
-            print-summary: false
         - name: Install vmmeter
           run: |
-            ARCH=amd64
-            if [ "$(uname -m)" == "aarch64" ] ; then ARCH=arm64 ; fi
-            crane export --platform linux/$ARCH ghcr.io/openfaasltd/vmmeter:latest | sudo tar -xvf - -C /usr/local/bin
+            sudo -E arkade system extract ghcr.io/openfaasltd/vmmeter:latest --path /usr/local/bin/
         - uses: self-actuated/vmmeter-action@master
 # vmmeter end
 
