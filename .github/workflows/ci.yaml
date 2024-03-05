@@ -22,7 +22,7 @@ jobs:
         # name: specs-${{ matrix.os }}
         # runs-on: ${{ matrix.os }}
         name: specs
-        runs-on: [actuated-arm64-8cpu-12gb]
+        runs-on: [actuated-8cpu-12gb,ae]
 
         steps:
 # vmmeter start
