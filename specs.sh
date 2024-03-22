@@ -110,3 +110,4 @@ sync; dd if=/dev/zero of=./tempfile bs=1M count=1024; sync
 # # # sudo pip install speedtest-cli
 # # # speedtest-cli
 
+docker pull ubuntu:latest
