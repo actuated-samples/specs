@@ -14,8 +14,11 @@ sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
 
 echo Write speed
 
-sync; dd if=/dev/zero of=./tempfile bs=1M count=1024; sync
+sync;
 
+time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
+
+rm ./tempfile
 
 # echo $DEBIAN_FRONTEND
 
