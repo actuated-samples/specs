@@ -20,6 +20,8 @@ time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 
 rm ./tempfile
 
+curl -i https://192.168.128.1:5000/v2/_catalog
+
 # echo $DEBIAN_FRONTEND
 
 # # /usr/bin/which python3
