@@ -26,7 +26,6 @@ jobs:
 # vmmeter end
 
         - uses: actions/checkout@v1
-
         - name: Check specs
           run: |
             ./specs.sh
