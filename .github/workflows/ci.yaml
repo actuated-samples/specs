@@ -17,8 +17,10 @@ jobs:
 
         steps:
 # vmmeter start
-        # - uses: alexellis/setup-arkade@master
-        # - uses: self-actuated/vmmeter-action@master
+        - uses: alexellis/setup-arkade@master
+        - run: |
+            arkade oci install ghcr.io/openfaasltd/vmmeter:latest --path /usr/local/bin
+        - uses: self-actuated/vmmeter-action@master
 # vmmeter end
 
         - uses: actions/checkout@v1
