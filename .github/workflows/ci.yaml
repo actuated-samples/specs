@@ -13,13 +13,13 @@ on:
 jobs:
     specs:
         name: specs
-        runs-on: [actuated-2cpu-8gb, a102]
+        runs-on: [actuated-2cpu-8gb, n100]
 
 
         steps:
 # vmmeter start
-        - uses: alexellis/setup-arkade@master
-        - uses: self-actuated/vmmeter-action@master
+        # - uses: alexellis/setup-arkade@master
+        # - uses: self-actuated/vmmeter-action@master
 # vmmeter end
 
         - uses: actions/checkout@v1
