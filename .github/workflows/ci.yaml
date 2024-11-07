@@ -15,7 +15,6 @@ jobs:
         name: specs
         runs-on: [actuated-2cpu-8gb, n100]
 
-
         steps:
 # vmmeter start
         # - uses: alexellis/setup-arkade@master
