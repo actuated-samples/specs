@@ -116,3 +116,4 @@ curl -i https://192.168.128.1:5000/v2/_catalog
 # # # speedtest-cli
 
 docker pull ubuntu:latest
+
