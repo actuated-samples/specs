@@ -4,23 +4,25 @@
 
 # echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
-echo Installing hdparm
+# echo Installing hdparm
 
 # sudo apt update -qqqqy && sudo apt install -qqqqy hdparm
 
-echo Read speed
+# echo Read speed
 
 # sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
 
-echo Write speed
+# echo Write speed
 
-sync;
+# sync;
+
+sudo dmesg
 
 # time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 
 # rm ./tempfile
 
-curl -i https://192.168.128.1:5000/v2/_catalog
+# curl -i https://192.168.128.1:5000/v2/_catalog
 
 # echo $DEBIAN_FRONTEND
 
@@ -115,4 +117,4 @@ sudo systemctl list-jobs
 # # # sudo pip install speedtest-cli
 # # # speedtest-cli
 
-docker pull ubuntu:latest
+# docker pull ubuntu:latest
