@@ -118,3 +118,6 @@ sudo systemctl list-jobs
 # # # speedtest-cli
 
 # docker pull ubuntu:latest
+
+sudo journalctl -u mount-runner.service
+
