@@ -14,14 +14,14 @@ jobs:
     specs:
         name: specs
         # runs-on: [actuated-2cpu-8gb, n100]
-        runs-on: actuated-2cpu-8gb
+        runs-on: [actuated-arm64-2cpu-8gb, m1]
 
         steps:
 # vmmeter start
-        - uses: alexellis/setup-arkade@master
-        - run: |
-            sudo arkade oci install ghcr.io/openfaasltd/vmmeter:latest --path /usr/local/bin
-        - uses: self-actuated/vmmeter-action@master
+        # - uses: alexellis/setup-arkade@master
+        # - run: |
+        #     sudo arkade oci install ghcr.io/openfaasltd/vmmeter:latest --path /usr/local/bin
+        # - uses: self-actuated/vmmeter-action@master
 # vmmeter end
 
         - uses: actions/checkout@v1
