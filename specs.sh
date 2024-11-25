@@ -120,4 +120,3 @@ time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 # docker pull ubuntu:latest
 
 # sudo journalctl -u mount-runner.service
-
