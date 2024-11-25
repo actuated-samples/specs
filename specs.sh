@@ -1,12 +1,12 @@
 #!/bin/bash
 
-lsblk
-
-echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
-
 echo Installing hdparm
 
 sudo apt update -qqqqy && sudo apt install -qqqqy hdparm
+
+lsblk
+
+echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
 echo Read speed
 
@@ -119,5 +119,5 @@ time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 
 # docker pull ubuntu:latest
 
-sudo journalctl -u mount-runner.service
+# sudo journalctl -u mount-runner.service
 
