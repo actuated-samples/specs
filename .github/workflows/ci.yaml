@@ -13,8 +13,8 @@ on:
 jobs:
     specs:
         name: specs
-        # runs-on: [actuated-2cpu-8gb, n100]
-        runs-on: [actuated-arm64-2cpu-8gb, m1]
+        runs-on: [actuated-2cpu-8gb, n100]
+        # runs-on: [actuated-arm64-2cpu-8gb, m1]
 
         steps:
 # vmmeter start
