@@ -12,20 +12,13 @@ on:
 
 jobs:
     specs:
-        name: specs
-        runs-on: [actuated-2cpu-4gb, gce]
-        # runs-on: [actuated-arm64-2cpu-8gb, m1]
-
+        name: microvm-kernel-${{ matrix.label }}
+        runs-on: [actuated-4cpu-8gb, "${{ matrix.label }}" ]
+        strategy:
+          matrix:
+            label: [a102,ec2]
         steps:
-# vmmeter start
-        # - uses: alexellis/setup-arkade@master
-        # - run: |
-        #     sudo arkade oci install ghcr.io/openfaasltd/vmmeter:latest --path /usr/local/bin
-        # - uses: self-actuated/vmmeter-action@master
-# vmmeter end
-
         - uses: actions/checkout@v1
         - name: Check specs
           run: |
             ./specs.sh
-
