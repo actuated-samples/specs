@@ -23,10 +23,7 @@ sync;
 
 time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 
-sudo  dmidecode -t processor | grep "Max Speed"
-
-lscpu | grep -i "model name" |uniq
-lscpu | grep MHz
+lscpu
 
 # rm ./tempfile
 
