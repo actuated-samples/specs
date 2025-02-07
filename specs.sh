@@ -20,6 +20,11 @@ sync;
 
 time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 
+sudo  dmidecode -t processor | grep "Max Speed"
+
+lscpu | grep -i "model name" |uniq
+lscpu | grep MHz
+
 # rm ./tempfile
 
 # curl -i https://192.168.128.1:5000/v2/_catalog
@@ -117,6 +122,6 @@ time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 # # # sudo pip install speedtest-cli
 # # # speedtest-cli
 
-docker pull ubuntu:latest
+# docker pull ubuntu:latest
 
 # sudo journalctl -u mount-runner.service
