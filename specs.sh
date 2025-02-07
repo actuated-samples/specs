@@ -2,7 +2,10 @@
 
 echo Installing hdparm
 
-sudo apt update -qqqqy && sudo apt install -qqqqy hdparm
+sudo apt update -qqqqy && \
+  sudo apt install -qqqqy \
+  hdparm \
+  dmidecode
 
 lsblk
 
