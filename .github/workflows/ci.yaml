@@ -20,7 +20,7 @@ jobs:
     #         label: [a102,ec2]
     
         name: specs
-        runs-on: [actuated-arm64-4cpu-8gb, aadp]
+        runs-on: [actuated-4cpu-8gb]
         steps:
         - uses: actions/checkout@v1
         - name: Check specs
