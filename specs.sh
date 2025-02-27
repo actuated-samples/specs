@@ -1,29 +1,33 @@
 #!/bin/bash
 
-echo Installing hdparm
+# echo Installing hdparm
 
-sudo apt update -qqqqy && \
-  sudo apt install -qqqqy \
-  hdparm \
-  dmidecode
+# sudo apt update -qqqqy && \
+#   sudo apt install -qqqqy \
+#   hdparm \
+#   dmidecode
 
-lsblk
+# lsblk
 
-echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
+# echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
-echo Read speed
+# echo Read speed
 
-sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
+# sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
 
-echo Write speed
+# echo Write speed
 
-sync;
+# sync;
 
-# sudo dmesg
+# # sudo dmesg
 
-time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
+# time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 
-lscpu
+# lscpu
+
+###
+
+curl -sLS https://github.com/moby/moby/raw/master/contrib/check-config.sh | sudo sh
 
 # rm ./tempfile
 
