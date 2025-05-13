@@ -1,33 +1,31 @@
 #!/bin/bash
 
-# echo Installing hdparm
+echo Installing hdparm
 
-# sudo apt update -qqqqy && \
-#   sudo apt install -qqqqy \
-#   hdparm \
-#   dmidecode
+sudo apt update -qqqqy && \
+  sudo apt install -qqqqy \
+  hdparm
 
 # lsblk
 
 # echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
-# echo Read speed
+echo Read speed
+sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
 
-# sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
+echo Write speed
+sync;
+time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 
-# echo Write speed
+echo "Run a container"
 
-# sync;
-
-# # sudo dmesg
-
-# time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
+# docker run -t -i alpine:latest cat /etc/os-release
 
 # lscpu
 
 ###
 
-curl -sLS https://github.com/moby/moby/raw/master/contrib/check-config.sh | sudo sh
+# curl -sLS https://github.com/moby/moby/raw/master/contrib/check-config.sh | sudo sh
 
 # rm ./tempfile
 
