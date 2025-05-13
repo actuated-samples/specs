@@ -23,8 +23,11 @@ jobs:
         runs-on: [actuated-2cpu-4gb, n100]
         steps:
         - uses: actions/checkout@v1
+        - name: Remove old arkade version
+          run: sudo rm -rf $(which arkade)
         - name: Get arkade
           run: |
+              set -e
               sudo apt update && sudo apt install file -qy
               curl -sLS https://get.arkade.dev | sudo sh
         - name: Download app
