@@ -23,6 +23,16 @@ jobs:
         runs-on: [actuated-2cpu-4gb, n100]
         steps:
         - uses: actions/checkout@v1
+        - name: Get arkade
+          run: |
+              sudo apt update && sudo apt install file -qy
+              curl -sLS https://get.arkade.dev | sudo sh
+        - name: Download app
+          run: |
+              echo ${{ matrix.apps }}
+              arkade get ${{ matrix.apps }}
+              file /home/runner/.arkade/bin/${{ matrix.apps }}
+
         # - name: Check specs
         #   run: |
         #     ./specs.sh
