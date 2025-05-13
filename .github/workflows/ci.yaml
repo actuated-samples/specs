@@ -29,7 +29,7 @@ jobs:
           run: |
               set -e
               sudo apt update && sudo apt install file -qy
-              curl -sLS https://get.arkade.dev | sudo sh
+              curl -sLSf https://get.arkade.dev | sudo sh
         - name: Download app
           run: |
               echo ${{ matrix.apps }}
