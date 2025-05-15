@@ -40,7 +40,7 @@ jobs:
         - name: Allow dig to whitelisted domains
           run: dig openfaas.com
         - name: Block dig to non-whitelisted domains
-          run: dig duckduckgo.com
+          run: dig duckduckgo.com 1.1.1.1
 
 
               
