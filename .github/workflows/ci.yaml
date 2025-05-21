@@ -37,6 +37,10 @@ jobs:
               arkade get ${{ matrix.apps }}
               file /home/runner/.arkade/bin/${{ matrix.apps }}
 
+        - name: Show resolv.conf
+          run: |
+              sudo cat /etc/resolv.conf
+
         - name: Allow dig to whitelisted domains
           run: dig openfaas.com
         - name: Block dig to non-whitelisted domains
