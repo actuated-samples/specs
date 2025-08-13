@@ -22,6 +22,10 @@ jobs:
         runs-on: [actuated-2cpu-8gb]
         steps:
         - uses: actions/checkout@v5
+
+        - name: Setup mirror
+          uses: self-actuated/hub-mirror@master
+
         - name: Hello
           run: echo "Hello World"
         - name: Remove old arkade version
@@ -46,8 +50,9 @@ jobs:
         - name: Block dig to non-whitelisted domains
           run: dig duckduckgo.com 1.1.1.1
 
+        - name: Test Docker connection
+          run: docker info
 
-              
         # - name: Check specs
         #   run: |
         #     ./specs.sh
