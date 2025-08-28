@@ -21,7 +21,7 @@ jobs:
 
 
         name: specs
-        runs-on: [actuated-24cpu-16gb-burstable]
+        runs-on: [actuated-2cpu-4gb]
         steps:
         - uses: actions/checkout@v5
         - name: Basic info
