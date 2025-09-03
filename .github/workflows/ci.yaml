@@ -21,7 +21,7 @@ jobs:
 
 
         name: specs
-        runs-on: [actuated-2cpu-8gb,n100]
+        runs-on: [actuated-arm64-2cpu-8gb,m1]
         steps:
         - uses: actions/checkout@v5
         - name: Run script
