@@ -59,15 +59,12 @@ echo "Run a container"
 # # echo "Machine ID: $(sudo cat /etc/machine-id)"
 # # echo "DBUS machine ID: $(sudo cat /var/lib/dbus/machine-id)"
 
-# # echo What was the start-time of the system image?
+echo What was the start-time of the system image?
 
-# sudo systemd-analyze critical-chain
-
-# sudo systemd-analyze
-
-# sudo systemd-analyze blame
-
-# sudo systemctl list-jobs
+sudo systemd-analyze critical-chain
+sudo systemd-analyze
+sudo systemd-analyze blame
+sudo systemctl list-jobs
 
 # # echo Where is this runner?
 
