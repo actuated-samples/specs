@@ -21,7 +21,7 @@ jobs:
 
 
         name: specs
-        runs-on: [actuated-2cpu-4gb]
+        runs-on: [actuated-2cpu-8gb,n100]
         steps:
         - uses: actions/checkout@v5
         - name: Basic info
