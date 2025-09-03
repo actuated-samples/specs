@@ -70,6 +70,11 @@ sudo systemctl list-jobs
 
 sudo dmesg
 
+docker info
+
+sudo systemctl --no-pager containerd
+sudo systemctl --no-pager docker
+
 # # echo Where is this runner?
 
 # # curl -s http://ip-api.com/json|jq
