@@ -1,23 +1,25 @@
 #!/bin/bash
 
-echo Installing hdparm
+# echo Installing hdparm
 
-sudo apt update -qqqqy && \
-  sudo apt install -qqqqy \
-  hdparm
+# sudo apt update -qqqqy && \
+#   sudo apt install -qqqqy \
+#   hdparm
+
+modprobe -c | grep -E '^(blacklist|install) (drm|efi_pstore|configfs|bpfilter)' || :
 
 # lsblk
 
 # echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
-echo Read speed
-sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
+# echo Read speed
+# sudo hdparm -t $(mount |grep "/ "|cut -d " " -f1)
 
-echo Write speed
-sync;
-time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
+# echo Write speed
+# sync;
+# time dd if=/dev/zero of=./tempfile bs=1M count=1024 conv=fdatasync
 
-echo "Run a container"
+# echo "Run a container"
 
 # docker run -t -i alpine:latest cat /etc/os-release
 
