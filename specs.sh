@@ -66,6 +66,8 @@ sudo systemd-analyze
 sudo systemd-analyze blame
 sudo systemctl list-jobs
 
+sudo dmesg
+
 # # echo Where is this runner?
 
 # # curl -s http://ip-api.com/json|jq
