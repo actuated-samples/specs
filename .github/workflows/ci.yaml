@@ -24,42 +24,6 @@ jobs:
         runs-on: [actuated-2cpu-8gb,n100]
         steps:
         - uses: actions/checkout@v5
-        - name: Basic info
+        - name: Run script
           run: |
-              nproc
-              free -h
-              lscpu
-
-        # - name: Setup mirror
-        #   uses: self-actuated/hub-mirror@master
-
-        # - name: Hello
-        #   run: echo "Hello World"
-        # - name: Remove old arkade version
-        #   run: sudo rm -rf $(which arkade)
-        # - name: Get arkade
-        #   run: |
-        #       set -e
-        #       sudo apt update && sudo apt install file -qy
-        #       curl -sLSf https://get.arkade.dev | sudo sh
-        # - name: Download app
-        #   run: |
-        #       echo ${{ matrix.apps }}
-        #       arkade get ${{ matrix.apps }}
-        #       file /home/runner/.arkade/bin/${{ matrix.apps }}
-
-        # - name: Show resolv.conf
-        #   run: |
-        #       sudo cat /etc/resolv.conf
-
-        # - name: Allow dig to whitelisted domains
-        #   run: dig openfaas.com
-        # - name: Block dig to non-whitelisted domains
-        #   run: dig duckduckgo.com 1.1.1.1
-
-        # - name: Test Docker connection
-        #   run: docker info
-
-        # - name: Check specs
-        #   run: |
-        #     ./specs.sh
+              ./specs.sh
