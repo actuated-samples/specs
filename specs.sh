@@ -70,12 +70,12 @@ sudo systemctl list-jobs
 
 sudo dmesg
 
-time docker info
+# time docker info
 
-sudo systemctl status --no-pager containerd
-sudo systemctl status  --no-pager docker
+# sudo systemctl status --no-pager containerd
+# sudo systemctl status  --no-pager docker
 
-sudo dmesg
+# sudo dmesg
 
 # # echo Where is this runner?
 
