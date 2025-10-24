@@ -20,7 +20,7 @@ jobs:
     #         label: [a102,ec2]
 
         name: specs
-        runs-on: [actuated-1cpu-2gb,do]
+        runs-on: [actuated-1cpu-2gb]
         steps:
         - uses: actions/checkout@v5
         - name: Run script
