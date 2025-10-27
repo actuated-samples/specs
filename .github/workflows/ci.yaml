@@ -14,7 +14,7 @@ on:
 jobs:
     specs:
         name: specs
-        runs-on: [actuated-1cpu-4gb, do]
+        runs-on: [actuated-1cpu-2gb, n100]
         steps:
         - uses: actions/checkout@v5
         - name: Run script
