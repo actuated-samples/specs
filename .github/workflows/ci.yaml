@@ -24,3 +24,4 @@ jobs:
               cat /proc/cmdline
               echo 
               ./specs.sh
+
