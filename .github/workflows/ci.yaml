@@ -22,9 +22,11 @@ jobs:
             mtu: 1460
         - name: Check MTU
           run: |
+              cat /proc/cmdline
+              ip addr
+              ip link
               docker network ls
               docker network ls -q|xargs docker network inspect|grep -i mtu
-              cat /proc/cmdline
         # - name: Run script
         #   run: |
              
