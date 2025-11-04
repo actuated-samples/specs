@@ -19,7 +19,7 @@ jobs:
         - uses: actions/checkout@v5
         - uses: self-actuated/hub-mirror@master
           with:
-            mtu: 1456
+            mtu: 1460
         - name: Check MTU
           run: |
               docker network ls
