@@ -35,4 +35,3 @@ jobs:
               curl https://192.168.128.1:5000 -i
               echo 
               # ./specs.sh
-
