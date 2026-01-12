@@ -13,7 +13,7 @@ on:
 jobs:
     specs:
         name: specs
-        runs-on: [actuated-2cpu-4gb, s10]
+        runs-on: [actuated-2cpu-4gb, s9]
         steps:
         - uses: actions/checkout@v5
         # - uses: self-actuated/hub-mirror@master
@@ -30,6 +30,9 @@ jobs:
           run: |
               sudo journalctl -u actions --no-pager --output=cat
               cat /proc/cmdline
+              sudo systemctl-analyze
+              sudo journalctl -o short-monotonic --no-pager
+
               echo 
               ./specs.sh
 
