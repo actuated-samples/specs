@@ -28,10 +28,10 @@ jobs:
         #       docker network ls -q|xargs docker network inspect|grep -i mtu
         - name: Run script
           run: |
-              sudo journalctl -u actions --no-pager --output=cat
-              cat /proc/cmdline
+              # sudo journalctl -u actions --no-pager --output=cat
+              # cat /proc/cmdline
               sudo systemd-analyze
               sudo journalctl -o short-monotonic --no-pager -u mount-runner           
               curl https://192.168.128.1:5000 -i
-              echo 
+              # echo 
               # ./specs.sh
