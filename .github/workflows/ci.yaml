@@ -28,7 +28,7 @@ jobs:
         #       docker network ls -q|xargs docker network inspect|grep -i mtu
         - name: Run script
           run: |
-              # sudo journalctl -u actions --no-pager --output=cat
+              sudo journalctl -u actions --no-pager --output=cat
               # cat /proc/cmdline
               sudo systemd-analyze
               sudo journalctl -o short-monotonic --no-pager -u mount-runner           
