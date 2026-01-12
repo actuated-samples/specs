@@ -32,7 +32,7 @@ jobs:
               cat /proc/cmdline
               sudo systemd-analyze
               sudo journalctl -o short-monotonic --no-pager -u mount-runner           
-
+              curl https://192.168.128.1:5000 -i
               echo 
-              ./specs.sh
+              # ./specs.sh
 
