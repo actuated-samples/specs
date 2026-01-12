@@ -10,6 +10,7 @@ modprobe -c | grep -E '^(blacklist|install) (drm|efi_pstore|configfs|bpfilter)' 
 
 # lsblk
 
+
 # echo Rotational disks? $(cat /sys/block/vda/queue/rotational)
 
 # echo Read speed
