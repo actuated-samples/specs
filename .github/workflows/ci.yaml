@@ -30,8 +30,8 @@ jobs:
           run: |
               sudo journalctl -u actions --no-pager --output=cat
               cat /proc/cmdline
-              sudo systemctl-analyze
-              sudo journalctl -o short-monotonic --no-pager
+              sudo systemd-analyze
+              sudo journalctl -o short-monotonic --no-pager -u mount-runner           
 
               echo 
               ./specs.sh
